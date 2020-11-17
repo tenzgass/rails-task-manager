@@ -1,0 +1,13 @@
+<h1>Here are your tasks for today</h1>
+
+
+<% @tasks.each do |task|%>
+  <li><input type="checkbox" value='<%=%>'>
+  <%=link_to task.title, task_path(task)%>
+  <%= link_to  "Delete", task_path(task), method: :delete %>
+<%end%>
+</ul>
+
+<h3>Do you want to create a new task ?</h3>
+
+<%= link_to  "Create a new task", tasks_new_path %>
